@@ -3,6 +3,9 @@
 ### Миграции
 
 `flask db init` -- инициировать базу данных
+
 `flask db migrate -m "Initial migration"` -- сделать миграцию
+
 `flask db upgrade` -- применить миграцию
+
 `flask db downgrade` -- откатиться
