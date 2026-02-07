@@ -15,3 +15,5 @@ windows аналог:
 `netstat -ano | findstr :<PORT>`
 
 `taskkill /F /PID <PID> /T` завершить процесс и его дочки
+
+unix find large file: `sudo du -ahx /path/to/dir | sort -rh | head -n 10`
