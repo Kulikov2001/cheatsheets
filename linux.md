@@ -41,3 +41,9 @@ sudo ufw allow 49152:65535/udp
 ```bash
 sudo systemctl restart coturn
 ```
+### Восстановление ext4
+Пусть битый сектор это /dev/sdb1, тогда
+
+`sudo blkid /dev/sdb1` - убеждаемся что файловая система ext4
+`sudo mke2fs -n /dev/sdb1` - ищем суперблоки (для отладки, сейчас не понадобится)
+`sudo e2fsck -fy /dev/sdb1` - сам процесс восстановления
