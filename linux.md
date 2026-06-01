@@ -1,4 +1,4 @@
-# TURN/STUN сервер
+### TURN/STUN сервер
 
 `sudo apt install coturn`
 
@@ -44,12 +44,13 @@ sudo systemctl restart coturn
 ### Восстановление ext4
 Пусть битый сектор это /dev/sdb1, тогда
 
-`sudo blkid /dev/sdb1` - убеждаемся что файловая система ext4
-`sudo mke2fs -n /dev/sdb1` - ищем суперблоки (для отладки, сейчас не понадобится)
-`sudo e2fsck -fy /dev/sdb1` - сам процесс восстановления
+-`sudo blkid /dev/sdb1` - убеждаемся что файловая система ext4
+-`sudo mke2fs -n /dev/sdb1` - ищем суперблоки (для отладки, сейчас не понадобится)
+-`sudo e2fsck -fy /dev/sdb1` - сам процесс восстановления
 
 ### Увеличение кол-ва file watchers Vite для HMR
 Временно: `sudo sysctl fs.inotify.max_user_watches=524288`
+
 Постоянно:
 - `sudo vi /etc/sysctl.conf`
 - `fs.inotify.max_user_watches=524288`
