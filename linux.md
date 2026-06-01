@@ -47,3 +47,6 @@ sudo systemctl restart coturn
 `sudo blkid /dev/sdb1` - убеждаемся что файловая система ext4
 `sudo mke2fs -n /dev/sdb1` - ищем суперблоки (для отладки, сейчас не понадобится)
 `sudo e2fsck -fy /dev/sdb1` - сам процесс восстановления
+
+### Увеличение кол-ва file watchers Vite для HMR
+`sudo sysctl fs.inotify.max_user_watches=524288`
