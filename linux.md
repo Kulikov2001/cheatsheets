@@ -49,4 +49,8 @@ sudo systemctl restart coturn
 `sudo e2fsck -fy /dev/sdb1` - сам процесс восстановления
 
 ### Увеличение кол-ва file watchers Vite для HMR
-`sudo sysctl fs.inotify.max_user_watches=524288`
+Временно: `sudo sysctl fs.inotify.max_user_watches=524288`
+Постоянно:
+- `sudo vi /etc/sysctl.conf`
+- `fs.inotify.max_user_watches=524288`
+- `sudo sysctl -p`
