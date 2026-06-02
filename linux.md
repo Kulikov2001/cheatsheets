@@ -55,3 +55,21 @@ sudo systemctl restart coturn
 - `sudo vi /etc/sysctl.conf`
 - `fs.inotify.max_user_watches=524288`
 - `sudo sysctl -p`
+#### Расшаривание Samba
+1) `sudo smbpasswd -a radaken`
+
+2) Добавить шару в конфиг
+  ```
+  echo '
+  [radaken]
+     path = /home/radaken
+     browseable = yes
+     read only = no
+     valid users = radaken' | sudo tee -a /etc/samba/smb.conf
+```
+
+3) `testparm -s`
+
+4) `sudo systemctl restart smbd`
+
+Подключение через smb://<IP>, обычно в строке браузера
